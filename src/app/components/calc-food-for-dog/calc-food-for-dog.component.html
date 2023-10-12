@@ -1,0 +1,171 @@
+<div class="container">
+  <form [formGroup]="myForm">
+    <mat-stepper formArrayName="formArray" labelPosition="bottom" style="background: #3e4646" linear>
+
+      <mat-step formGroupName="0" color="accent">
+        <div class="step-wrap">
+          <div class="step-card">
+            <ng-template matStepLabel>Имя питомца</ng-template>
+            <h2 class="step-card__prompt">Как зовут вашего питомца?</h2>
+            <mat-form-field class="step-card__item" color="accent">
+              <mat-label style="color: white">Имя вашего питомца</mat-label>
+              <input matInput style="color: white" formControlName="name">
+              <mat-icon matSuffix [color]="(myForm.valid || (myForm.get('formArray.0.name')?.untouched)) ? 'accent': 'warn'">search</mat-icon>
+            </mat-form-field>
+            <div>
+              <button *ngIf="myForm.valid" mat-button matStepperNext class="next-btn">Далее</button>
+            </div>
+          </div>
+        </div>
+      </mat-step>
+
+      <mat-step formGroupName="1" color="accent">
+        <div class="step-wrap">
+          <div class="step-card">
+            <ng-template matStepLabel>Порода</ng-template>
+            <h2 class="step-card__prompt">Выберите породу</h2>
+            <mat-form-field class="step-card__item" color="accent">
+              <mat-label style="color: white">Порода вашего питомца</mat-label>
+              <input matInput style="color: white" [matAutocomplete]="autoBreed" formControlName="breedForAutCompl">
+              <mat-autocomplete #autoBreed="matAutocomplete">
+                <mat-option *ngFor="let option of dogsBreedFilterdOptions | async" [value]="option">
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
+              <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+            <div class="button-wrap button-grid-wrap">
+              <div class="radio-btn-group" *ngFor="let dog of dogs; index as i">
+                <input type="radio" name="breed" id="{{i}}" value="{{dog.breed}}" formControlName="breed">
+                <label matStepperNext class="dog-button" for="{{i}}">
+                  <div>{{dog.breed}}</div>
+                  <div><img [src]="dog.img" alt=""></div>
+                </label>
+              </div>
+            </div>
+            <button mat-button matStepperPrevious class="prev-btn">Назад</button>
+            <button mat-button matStepperNext class="next-btn">Далее</button>
+          </div>
+        </div>
+      </mat-step>
+
+      <mat-step formGroupName="2" color="accent">
+        <div class="step-wrap">
+          <div class="step-card">
+            <ng-template matStepLabel>Размеры питомца</ng-template>
+            <h2 class="step-card__prompt">Какого размера ваш питомец?</h2>
+            <div class="button-grid-wrap">
+              <div class="radio-btn-group">
+                <input type="radio" name="size" id="sizeSmall" [value]="sizeEnum.SMALL" formControlName="size">
+                <label class="dog-button lbl" for="sizeSmall">
+                  <div><span style="font-weight: bold">Мелкий</span><br>До 10 кг</div>
+                  <div><img class="dog-img" src="assets/size-dog/small2x.8b4613a.png" alt=""></div>
+                </label>
+                <input type="radio" name="size" id="sizeMedium" [value]="sizeEnum.MEDIUM" formControlName="size">
+                <label class="dog-button lbl" for="sizeMedium">
+                  <div><span style="font-weight: bold">Средний</span><br>От 10 кг до 25 кг</div>
+                  <div><img class="dog-img" src="assets/size-dog/medium2x.4d35a50.png" alt=""></div>
+                </label>
+                <input type="radio" name="size" id="sizeBig" [value]="sizeEnum.BIG" formControlName="size">
+                <label class="dog-button lbl" for="sizeBig">
+                  <div><span style="font-weight: bold">Крупный</span><br>От 25 кг</div>
+                  <div><img class="dog-img" src="assets/size-dog/big2x.b154daf.png" alt=""></div>
+                </label>
+              </div>
+            </div>
+            <button mat-button matStepperPrevious class="prev-btn">Назад</button>
+            <button mat-button matStepperNext class="next-btn">Далее</button>
+          </div>
+        </div>
+      </mat-step>
+
+      <mat-step formGroupName="3" color="accent">
+        <div class="step-wrap">
+          <div class="step-card">
+            <ng-template matStepLabel>Возраст питомца</ng-template>
+            <h2 class="step-card__prompt">Какой примерный возраст питомца?</h2>
+            <div class="button-grid-wrap">
+              <div class="radio-btn-group">
+                <input type="radio" name="age" id="ageSmall" [value]="ageEnum.SMALL" formControlName="age">
+                <label class="dog-button lbl" for="ageSmall">
+                  <div><span style="font-weight: bold">Меньше 1,5 лет</span><br>Щенок</div>
+                  <div><img class="dog-img" src="assets/age-dog/small2x.e4615c1.png" alt=""></div>
+                </label>
+                <input type="radio" name="age" id="ageMedium" [value]="ageEnum.MEDIUM" formControlName="age">
+                <label class="dog-button lbl" for="ageMedium">
+                  <div><span style="font-weight: bold">1,5 - 7 лет</span><br>Взрослый</div>
+                  <div><img class="dog-img" src="assets/age-dog/medium2x.03fb093.png" alt=""></div>
+                </label>
+                <input type="radio" name="age" id="ageBig" [value]="ageEnum.BIG" formControlName="age">
+                <label class="dog-button lbl" for="ageBig">
+                  <div><span style="font-weight: bold">Больше 7 лет</span><br>Пожилой</div>
+                  <div><img class="dog-img" src="assets/age-dog/big2x.0c601b4.png" alt=""></div>
+                </label>
+                <input type="radio" name="age" id="ageOld" [value]="ageEnum.OLD" formControlName="age">
+                <label class="dog-button lbl" for="ageOld">
+                  <div><span style="font-weight: bold">Больше 12 лет</span><br>Стареющий</div>
+                  <div><img class="dog-img" src="assets/age-dog/old2x.2108d88.png" alt=""></div>
+                </label>
+              </div>
+            </div>
+            <button mat-button matStepperPrevious class="prev-btn">Назад</button>
+            <button mat-button matStepperNext class="next-btn">Далее</button>
+          </div>
+        </div>
+      </mat-step>
+
+      <mat-step formGroupName="4" color="accent">
+        <div class="step-wrap">
+          <div class="step-card">
+            <ng-template matStepLabel>Активность питомца</ng-template>
+            <h2 class="step-card__prompt">Насколько активен ваш питомец?</h2>
+            <div class="button-grid-wrap">
+              <div class="radio-btn-group">
+                <input type="radio" name="activity" id="reducedActivity" [value]="activityEnum.REDUCED" formControlName="activity">
+                <label class="dog-button lbl" for="reducedActivity">
+                  <div><span style="font-weight: bold">Сниженная</span><br>активность</div>
+                  <div><img class="dog-img" src="assets/activity-dog/reducedAct.png" alt=""></div>
+                </label>
+                <input type="radio" name="activity" id="normalActivity" [value]="activityEnum.NORMAL" formControlName="activity">
+                <label class="dog-button lbl" for="normalActivity">
+                  <div><span style="font-weight: bold">Нормальная</span><br>активность</div>
+                  <div><img class="dog-img" src="assets/activity-dog/normalAct.png" alt=""></div>
+                </label>
+                <input type="radio" name="activity" id="increasedActivity" [value]="activityEnum.INCREASED" formControlName="activity">
+                <label class="dog-button lbl" for="increasedActivity">
+                  <div><span style="font-weight: bold">Повышенная</span><br>активность</div>
+                  <div><img class="dog-img" src="assets/activity-dog/IncreasedAct.png" alt=""></div>
+                </label>
+              </div>
+            </div>
+            <button mat-button matStepperPrevious class="prev-btn">Назад</button>
+            <button mat-button matStepperNext class="next-btn" (click)="filtrationBeforeChoosingFeed()">Далее</button>
+          </div>
+        </div>
+      </mat-step>
+
+      <mat-step formGroupName="5" color="accent">
+        <div class="step-wrap">
+          <div class="step-card">
+            <ng-template matStepLabel>Корм</ng-template>
+            <h2 class="step-card__prompt">Каким брендом корма вы кормите питомца?</h2>
+            <mat-form-field class="step-card__item" color="accent">
+              <mat-label style="color: white">Корм</mat-label>
+              <input matInput style="color: white" [matAutocomplete]="autoFood" formControlName="food">
+              <mat-autocomplete #autoFood="matAutocomplete">
+                <mat-option *ngFor="let option of foodFilteredOptions | async"  [value]="option">
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+            <div>
+              <button mat-button class="next-btn" (click)="[calcRation(), openDialogForm()]">Рассчитать рацион</button>
+            </div>
+          </div>
+        </div>
+      </mat-step>
+
+    </mat-stepper>
+  </form>
+</div>
+

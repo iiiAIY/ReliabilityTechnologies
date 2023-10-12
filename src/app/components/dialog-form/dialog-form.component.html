@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Рацион для вашего питомца!</h1>
+<div mat-dialog-content class="my-dialog-content">
+  <h2>Для питомца породы ({{ration.dogBreed}}) по кличке <b>"{{ration.dogName}}"</b></h2>
+  <img [src]="ration.dogImg" class="dog-img">
+  <h3>Рацион:</h3>
+  <div class="ration">
+    <p>Питомца необходимо кормить <b style="text-decoration: underline">{{ration.feedingsPerDay}}</b> раз в день<br>
+       Суммарное количество каллорий за день должно составлять
+       <b style="text-decoration: underline">{{ration.caloricInDay | numberRound}}</b>,<br>
+       что равно <b style="text-decoration: underline">{{ration.feedWeight | feedWeight}}</b>
+    </p>
+  </div>
+</div>
+<div mat-dialog-actions align="end">
+  <button style="background: firebrick" mat-button mat-dialog-close>Закрыть</button>
+</div>

@@ -1,0 +1,136 @@
+{
+  "dogs": [
+    {
+      "id": 1,
+      "breed": "Далматинец",
+      "img": "https://i.postimg.cc/76tVvMTf/dog-img-1.jpg"
+    },
+    {
+      "id": 2,
+      "breed": "Золотистый ретривер",
+      "img": "https://i.postimg.cc/3NyZ34g9/dog-img-2.jpg"
+    },{
+      "id": 3,
+      "breed": "Немецкая овчарка",
+      "img": "https://i.postimg.cc/tJLNJqkb/dog-img-3.jpg"
+    },{
+      "id": 4,
+      "breed": "Пудель",
+      "img": "https://i.postimg.cc/7PcVm9kR/dog-img-4.jpg"
+    },
+    {
+      "id": 5,
+      "breed": "Такса",
+      "img": "https://i.postimg.cc/cLGcNJ6M/dog-img-5.jpg"
+    },{
+      "id": 6,
+      "breed": "Английский бульдог",
+      "img": "https://i.postimg.cc/hPd0wm4t/dog-img-6.jpg"
+    },
+    {
+      "id": 7,
+      "breed": "Бигль",
+      "img": "https://i.postimg.cc/Dz2d8YrS/dog-img-7.jpg"
+    },
+    {
+      "id": 8,
+      "breed": "Джек-рассел-терьер",
+      "img": "https://i.postimg.cc/pdqQ8YCq/dog-img-8.jpg"
+    },
+    {
+      "id": 9,
+      "breed": "Йоркширский терьер",
+      "img": "https://i.postimg.cc/gJjVKXBd/dog-img-9.jpg"
+    },
+    {
+      "id": 10,
+      "breed": "Мопс",
+      "img": "https://i.postimg.cc/QNBP8HNR/dog-img-10.jpg"
+    },
+    {
+      "id": 11,
+      "breed": "Шпиц",
+      "img": "https://i.postimg.cc/MZhLvqvX/dog-img-11.jpg"
+    },
+    {
+      "id": 12,
+      "breed": "Ротвейлер",
+      "img": "https://i.postimg.cc/xTM4mhz5/dog-img-12.jpg"
+    },
+    {
+      "id": 13,
+      "breed": "Французский бульдог",
+      "img": "https://i.postimg.cc/W17YWZSJ/dog-img-13.jpg"
+    },
+    {
+      "id": 14,
+      "breed": "Чихуахуа",
+      "img": "https://i.postimg.cc/W1Vfw8mv/dog-img-14.jpg"
+    }
+  ],
+  "foods" : [
+    {
+      "id": 1,
+      "name": "Сухой корм Karmy Hypoallergenic Mini для собак мелких пород с Ягненком",
+      "forSize": ["small", "medium"],
+      "forAge": ["medium", "big", "old"],
+      "caloricIn100Gram": 391
+    },
+    {
+      "id": 2,
+      "name": "Сухой корм GRANDORF для собак Ягнёнок с индейкой (рис) (Puppy)",
+      "forSize": ["small", "medium", "big"],
+      "forAge": ["small", "medium", "big", "old"],
+      "caloricIn100Gram": 427
+    },
+    {
+      "id": 3,
+      "name": "Сухой корм Royal Canin X-Small Puppy (Икс Смолл Паппи) для щенков",
+      "forSize": ["small", "medium"],
+      "forAge": ["small", "medium"],
+      "caloricIn100Gram": 390
+    },
+    {
+      "id": 4,
+      "name": "Сухой корм Royal Canin Mini Adult (Мини Эдалт)",
+      "forSize": ["small", "medium"],
+      "forAge": ["small", "medium", "big"],
+      "caloricIn100Gram": 387
+    },
+    {
+      "id": 5,
+      "name": "Сухой корм БЭКС корм для собак средних и крупных пород",
+      "forSize": ["medium", "big"],
+      "forAge": ["medium", "big"],
+      "caloricIn100Gram": 358
+    },
+    {
+      "id": 6,
+      "name": "Сухой корм Мираторг Extra Meat корм для собак средних пород",
+      "forSize": ["medium", "big"],
+      "forAge": ["medium", "big"],
+      "caloricIn100Gram": 383
+    },
+    {
+      "id": 7,
+      "name": "Сухой корм BRIT Premium Dog Adult Medium для взрослых собак средних пород",
+      "forSize": ["medium"],
+      "forAge": ["big"],
+      "caloricIn100Gram": 381
+    },
+    {
+      "id": 8,
+      "name": "Сухой корм ZooMania premium Мясное ассорти",
+      "forSize": ["small","medium", "big"],
+      "forAge": ["small","medium", "big"],
+      "caloricIn100Gram": 350
+    },
+    {
+      "id": 9,
+      "name": "Сухой корм Darsi мясное ассорти",
+      "forSize": ["small","medium", "big"],
+      "forAge": ["medium", "big", "old"],
+      "caloricIn100Gram": 348
+    }
+  ]
+}

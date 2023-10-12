@@ -1,0 +1,85 @@
+.container {
+  width: 1200px;
+  margin: 100px auto 0;
+}
+
+.step-wrap {
+  display: flex;
+  justify-content: center;
+  height: max-content;
+}
+
+.step-card__prompt {
+  font-size: 30px;
+  color: white;
+}
+
+.next-btn {
+  background: green;
+  color: white;
+}
+
+.prev-btn {
+  background: #a21a14;
+  color: white;
+  margin-right: 10px;
+  margin-top: 8px;
+}
+
+.button-wrap.button-grid-wrap {
+  display: grid;
+  grid-auto-rows: auto;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 8px;
+  column-gap: 10px;
+  grid-auto-flow: dense;
+}
+
+.dog-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 400px;
+  padding: 0 20px;
+  background: white;
+  font-size: 20px;
+  border-radius: 10px;
+
+  .dog-img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+.dog-button.lbl {
+  margin-bottom: 8px;
+}
+
+.mat-mdc-form-field {
+  margin-top: 16px;
+}
+
+.radio-btn-group{
+
+  input[type=radio] {
+    display: none;
+  }
+
+  label {
+    cursor: pointer;
+    user-select: none;
+    &:hover {
+      font-weight: bold;
+    }
+  }
+
+  input[type=radio]:checked + label {
+    text-decoration: underline;
+    font-weight: bold;
+  }
+}
+
+.step-card__item {
+  width: 500px;
+}
+
